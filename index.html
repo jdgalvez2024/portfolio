@@ -1,0 +1,104 @@
+<!-- index.html (Home Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovate Solutions - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Innovate Solutions</div>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+        <div class="nav-menu">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="slide active">
+                <img src="/images/1.jpg" alt="Business Innovation">
+                <div class="slide-content">
+                    <h1>Transforming Business Through Innovation</h1>
+                    <p>Cutting-edge solutions for modern enterprises</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="/images/2.jpg" alt="Team Collaboration">
+                <div class="slide-content">
+                    <h1>Collaborative Strategy</h1>
+                    <p>Empowering teams to achieve extraordinary results</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="/images/3.jpg" alt="Technology Solutions">
+                <div class="slide-content">
+                    <h1>Advanced Technology Solutions</h1>
+                    <p>Leveraging the latest tech to drive business growth</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </div>
+
+    <main class="home-content">
+        <section class="services">
+            <h2>Our Key Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <img src="/images/4.jpg" alt="Digital Strategy">
+                    <h3>Digital Strategy</h3>
+                    <p>Crafting roadmaps for digital transformation</p>
+                </div>
+                <div class="service-card">
+                    <img src="/images/5.jpg" alt="Technology Consulting">
+                    <h3>Technology Consulting</h3>
+                    <p>Expert guidance for technological innovation</p>
+                </div>
+                <div class="service-card">
+                    <img src="/images/6.jpg" alt="Business Optimization">
+                    <h3>Business Optimization</h3>
+                    <p>Streamlining processes for maximum efficiency</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Innovate Solutions. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Simple Carousel JavaScript
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
